@@ -12,8 +12,8 @@
 	<modules>
 		<module>movies-rest</module>
     	<module>movies-service</module>
-    <module>movies-domain</module>
-    <module>movies-repository</module>
+	    <module>movies-domain</module>
+	    <module>movies-repository</module>
   </modules>
 
 	<prerequisites>
