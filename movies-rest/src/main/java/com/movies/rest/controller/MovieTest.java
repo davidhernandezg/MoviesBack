@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.movies.rest.domain.MovieDTO;
+import com.movies.rest.domain.FilmDTO;
 import com.movies.service.IMovieServiceTest;
-
-import ma.glasnost.orika.MapperFacade;
 
 @RestController
 @RequestMapping("/test")
@@ -22,9 +20,6 @@ public class MovieTest {
 	@Inject
 	private IMovieServiceTest movieServiceTest;
 	
-	@Inject
-	private MapperFacade mapper;
-	
 	@RequestMapping(value="/movieTest")
 	public void createMovie(){
 		movieServiceTest.createMovie();
@@ -32,12 +27,12 @@ public class MovieTest {
 	
 	@RequestMapping(value="/getAll", method = RequestMethod.GET)
 	@ResponseBody
-	public List<MovieDTO> getAll(){
-		List<MovieDTO> pija = new ArrayList<>();
-		pija.add(new MovieDTO());
-		pija.add(new MovieDTO());
-		pija.add(new MovieDTO());
-		pija.add(new MovieDTO());
+	public List<FilmDTO> getAll(){
+		List<FilmDTO> pija = new ArrayList<>();
+		pija.add(new FilmDTO());
+		pija.add(new FilmDTO());
+		pija.add(new FilmDTO());
+		pija.add(new FilmDTO());
 		System.out.println();
 //		List<MovieDTO>  algomas = mapper.mapAsList(movieServiceTest.getAllMovies(), MovieDTO.class);
 		return pija;
