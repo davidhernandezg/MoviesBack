@@ -39,14 +39,9 @@ public class RepositoryConfig {
 			entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
 			
 			Properties jpaProperties = new Properties();
-			jpaProperties.put("spring.jpa.hibernate.ddl-auto", "create-drop");
-			jpaProperties.put("cachePrepStmts", "true");
-			jpaProperties.put("prepStmtCacheSize", "250");
-			jpaProperties.put("prepStmtCacheSqlLimit", "2048");
-			jpaProperties.put("useServerPrepStmts", "true");
-			jpaProperties.put("spring.jpa.hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-			jpaProperties.put("spring.jpa.hibernate.naming_strategy", "org.hibernate.cfg.ImprovedNamingStrategy");
-			jpaProperties.put("spring.jpa.show-sql", "false");
+			jpaProperties.put("hibernate.hbm2ddl.auto", "create-drop");
+			jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+			jpaProperties.put("hibernate.show_sql", "false");
 	
 			entityManagerFactoryBean.setJpaProperties(jpaProperties);
 	

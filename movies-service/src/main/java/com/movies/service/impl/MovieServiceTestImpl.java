@@ -1,32 +1,43 @@
 package com.movies.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.movies.domain.Film;
 import com.movies.service.IMovieServiceTest;
-import com.movies.service.domain.Movie;
 
 @Service
 public class MovieServiceTestImpl implements IMovieServiceTest {
 
-	private List<Movie> moviesList;
-
+	@Inject
+	FilmService filmService;
+	
 	public MovieServiceTestImpl() {
-		this.moviesList = new ArrayList<Movie>();
 	}
 
 	public void createMovie() {
-		Movie movie = new Movie();
-		movie.setId(1);
-		movie.setTitle("Los vengadores");
-		movie.setGenero("Acción");
-
-		moviesList.add(movie);
+		Film film = new Film();
+		film.setTitle("Los vengadores");
+		film.setGenre("Acción");
+		filmService.save(film);
 	}
 
-	public List<Movie> getAllMovies() {
-		return moviesList;
+	public void createMovie(String title) {
+		Film film = new Film();
+		film.setTitle(title);
+		film.setGenre("Drama");
+
+		filmService.save(film);
+	}
+	
+	public List<Film> getAllMovies() {
+		return filmService.findAll();
+	}
+	
+	public List<Film> findByTitle(String title){
+		return filmService.findByName(title);
 	}
 }
