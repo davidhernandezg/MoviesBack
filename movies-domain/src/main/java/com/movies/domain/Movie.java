@@ -4,7 +4,13 @@ import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
+@MappedSuperclass
 public abstract class Movie implements Serializable {
 
 	/**
@@ -12,18 +18,26 @@ public abstract class Movie implements Serializable {
 	 */
 	private static final long serialVersionUID = -4281036294127842362L;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
+	@Column(name="title")
 	private String title;
 
+	@Column(name="original_title")
 	private String originalTitle;
 
+	@Column(name="release_date")
 	private Date releaseDate;
 
-	private String genero;
+	@Column(name="genre")
+	private String genre;
 
+	@Column(name="duration")
 	private Time duration;
 
+	@Column(name="content_rating")
 	private Integer contentRating;
 
 	public Integer getId() {
@@ -58,12 +72,12 @@ public abstract class Movie implements Serializable {
 		this.releaseDate = releaseDate;
 	}
 
-	public String getGenero() {
-		return genero;
+	public String getGenre() {
+		return genre;
 	}
 
-	public void setGenero(String genero) {
-		this.genero = genero;
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
 	public Time getDuration() {

@@ -8,6 +8,8 @@ import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
+import com.movies.domain.config.DomainConfig;
+import com.movies.repository.config.RepositoryConfig;
 import com.movies.service.config.ServiceConfig;
 
 public class WebAppInitializer implements WebApplicationInitializer{
@@ -16,7 +18,7 @@ public class WebAppInitializer implements WebApplicationInitializer{
 		
 		// Create the 'root' Spring application context
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
-        rootContext.register(RestConfig.class, ServiceConfig.class);
+        rootContext.register(RestConfig.class, ServiceConfig.class, DomainConfig.class,RepositoryConfig.class);
 //        rootContext.register(ServiceConfig.class, JPAConfig.class, SecurityConfig.class);
  
         // Manage the lifecycle of the root application context

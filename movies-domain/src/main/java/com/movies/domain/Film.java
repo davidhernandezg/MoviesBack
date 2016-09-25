@@ -2,8 +2,11 @@ package com.movies.domain;
 
 import java.io.Serializable;
 
-//@Entity
-//@Table(name="film")
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="film")
 public class Film extends Movie implements Serializable {
 
 	/**
