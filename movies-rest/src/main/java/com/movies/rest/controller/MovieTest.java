@@ -38,7 +38,6 @@ public class MovieTest {
 		pija.add(new MovieDTO());
 		pija.add(new MovieDTO());
 		pija.add(new MovieDTO());
-		for(int i = 0;)
 		System.out.println();
 //		List<MovieDTO>  algomas = mapper.mapAsList(movieServiceTest.getAllMovies(), MovieDTO.class);
 		return pija;
