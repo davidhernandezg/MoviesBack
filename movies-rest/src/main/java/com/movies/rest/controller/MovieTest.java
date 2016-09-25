@@ -13,17 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.movies.rest.domain.FilmDTO;
 import com.movies.service.IMovieServiceTest;
 
-import ma.glasnost.orika.MapperFacade;
-
 @RestController
 @RequestMapping("/test")
 public class MovieTest {
 
 	@Inject
 	private IMovieServiceTest movieServiceTest;
-	
-	@Inject
-	private MapperFacade mapper;
 	
 	@RequestMapping(value="/movieTest")
 	public void createMovie(){
