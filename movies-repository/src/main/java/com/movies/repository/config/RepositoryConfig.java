@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "com.movies.repository")
+@EnableJpaRepositories("com.movies.repository")
 public class RepositoryConfig {
 
 		@Bean
@@ -32,7 +32,7 @@ public class RepositoryConfig {
 	
 			LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
 			entityManagerFactoryBean.setDataSource(dataSource());
-			entityManagerFactoryBean.setPackagesToScan(new String[] {"com.movies.repository"});
+			entityManagerFactoryBean.setPackagesToScan(new String[] {"com.movies.domain"});
 			
 			HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 			vendorAdapter.setShowSql(false);
