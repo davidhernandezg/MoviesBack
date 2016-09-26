@@ -34,7 +34,7 @@ public class FilmDTO implements Serializable {
 	/**
 	 * Género
 	 */
-	private String genero;
+	private String genre;
 	
 	/**
 	 * Duración del vídeo
@@ -79,11 +79,11 @@ public class FilmDTO implements Serializable {
 	}
 
 	public String getGenero() {
-		return genero;
+		return genre;
 	}
 
-	public void setGenero(String genero) {
-		this.genero = genero;
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
 	public Time getDuration() {
