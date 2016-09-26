@@ -27,12 +27,12 @@ public class FilmService implements IGenericEntityService<Film, Long>{
 	}
 
 	@Override
-	public Film findOne(long id) {
+	public Film findOne(Long id) {
 		return filmRepository.findOne(id);
 	}
 
 	@Override
-	public void delete(long id) {
+	public void delete(Long id) {
 		filmRepository.delete(id);
 	}
 

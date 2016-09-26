@@ -8,9 +8,9 @@ public interface IGenericEntityService<T, ID> {
 
     public void save(T entity);
 
-    public T findOne(long id);
+    public T findOne(ID id);
 
-    public void delete(long id);
+    public void delete(ID id);
 
     public List<T> findByName(String name);
 
