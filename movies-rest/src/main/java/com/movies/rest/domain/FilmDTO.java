@@ -14,7 +14,7 @@ public class FilmDTO implements Serializable {
 	/**
 	 * Identificador del vídeo
 	 */
-	private Integer id;
+	private Long id;
 
 	/**
 	 * Título España
@@ -46,11 +46,11 @@ public class FilmDTO implements Serializable {
 	 */
 	private Integer contentRating;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

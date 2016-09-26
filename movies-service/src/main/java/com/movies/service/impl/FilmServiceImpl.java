@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.movies.domain.Film;
 import com.movies.repository.FilmRepository;
-import com.movies.service.IGenericEntityService;
+import com.movies.service.IFilmService;
 
 @Service
-public class FilmService implements IGenericEntityService<Film, Long>{
+public class FilmServiceImpl implements IFilmService {
 	
 	@Inject
 	FilmRepository filmRepository;

@@ -20,7 +20,7 @@ public abstract class Movie implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Long id;
 
 	@Column(name="title")
 	private String title;
@@ -40,11 +40,11 @@ public abstract class Movie implements Serializable {
 	@Column(name="content_rating")
 	private Integer contentRating;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

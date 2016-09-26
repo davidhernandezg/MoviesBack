@@ -13,7 +13,7 @@ import com.movies.service.IMovieServiceTest;
 public class MovieServiceTestImpl implements IMovieServiceTest {
 
 	@Inject
-	FilmService filmService;
+	FilmServiceImpl filmService;
 	
 	public MovieServiceTestImpl() {
 	}
