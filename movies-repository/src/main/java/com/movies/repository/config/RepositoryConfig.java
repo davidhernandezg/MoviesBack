@@ -39,7 +39,7 @@ public class RepositoryConfig {
 			entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
 			
 			Properties jpaProperties = new Properties();
-			jpaProperties.put("hibernate.hbm2ddl.auto", "create-drop");
+			jpaProperties.put("hibernate.hbm2ddl.auto", "update");
 			jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 			jpaProperties.put("hibernate.show_sql", "false");
 	
