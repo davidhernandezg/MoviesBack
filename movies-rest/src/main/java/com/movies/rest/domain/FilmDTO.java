@@ -15,32 +15,32 @@ public class FilmDTO implements Serializable {
 	 * Identificador del vídeo
 	 */
 	private Integer id;
-	
+
 	/**
 	 * Título España
 	 */
 	private String title;
-	
+
 	/**
 	 * Titulo Original
 	 */
 	private String originalTitle;
-	
+
 	/**
 	 * Fecha de estreno
 	 */
 	private Date releaseDate;
-	
+
 	/**
 	 * Género
 	 */
-	private String genero;
-	
+	private String genre;
+
 	/**
 	 * Duración del vídeo
 	 */
 	private Time duration;
-	
+
 	/**
 	 * Calificación del contenido
 	 */
@@ -78,12 +78,12 @@ public class FilmDTO implements Serializable {
 		this.releaseDate = releaseDate;
 	}
 
-	public String getGenero() {
-		return genero;
+	public String getGenre() {
+		return genre;
 	}
 
-	public void setGenero(String genero) {
-		this.genero = genero;
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
 	public Time getDuration() {
@@ -100,5 +100,5 @@ public class FilmDTO implements Serializable {
 
 	public void setContentRating(Integer contentRating) {
 		this.contentRating = contentRating;
-	}	
+	}
 }
