@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.argespain.movies</groupId>
@@ -11,10 +12,11 @@
 
 	<modules>
 		<module>movies-rest</module>
-    	<module>movies-service</module>
-	    <module>movies-domain</module>
-	    <module>movies-repository</module>
-  </modules>
+		<module>movies-service</module>
+		<module>movies-domain</module>
+		<module>movies-repository</module>
+		<module>movies-adapter</module>
+	</modules>
 
 	<prerequisites>
 		<maven>3.3.9</maven>
@@ -42,7 +44,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>

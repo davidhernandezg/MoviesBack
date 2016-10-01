@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.movies.rest.domain.FilmDTO;
+import com.movies.adapter.dto.FilmDTO;
 import com.movies.service.IMovieServiceTest;
 
 import ma.glasnost.orika.MapperFacade;
@@ -25,15 +25,15 @@ public class MovieTestController {
 	@Inject
 	private MapperFacade mapper;
 	
-	@RequestMapping(value="/create")
-	public void createMovie(){
-		movieServiceTest.createMovie();
-	}
-	
-	@RequestMapping(value="/create/{title}")
-	public void createMovie(@PathVariable String title){
-		movieServiceTest.createMovie(title);
-	}
+//	@RequestMapping(value="/create")
+//	public void createMovie(){
+//		movieServiceTest.createMovie();
+//	}
+//	
+//	@RequestMapping(value="/create/{title}")
+//	public void createMovie(@PathVariable String title){
+//		movieServiceTest.createMovie(title);
+//	}
 	
 	@RequestMapping(value="/getAll", method = RequestMethod.GET)
 	@CrossOrigin

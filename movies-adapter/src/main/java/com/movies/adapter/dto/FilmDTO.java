@@ -1,4 +1,4 @@
-package com.movies.rest.domain;
+package com.movies.adapter.dto;
 
 import java.io.Serializable;
 import java.sql.Time;

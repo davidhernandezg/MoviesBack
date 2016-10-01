@@ -18,20 +18,20 @@ public class MovieServiceTestImpl implements IMovieServiceTest {
 	public MovieServiceTestImpl() {
 	}
 
-	public void createMovie() {
-		Film film = new Film();
-		film.setTitle("Los vengadores");
-		film.setGenre("Acción");
-		filmService.save(film);
-	}
+//	public void createMovie() {
+//		Film film = new Film();
+//		film.setTitle("Los vengadores");
+//		film.setGenre("Acción");
+//		filmService.save(film);
+//	}
 
-	public void createMovie(String title) {
-		Film film = new Film();
-		film.setTitle(title);
-		film.setGenre("Drama");
-
-		filmService.save(film);
-	}
+//	public void createMovie(String title) {
+//		Film film = new Film();
+//		film.setTitle(title);
+//		film.setGenre("Drama");
+//
+//		filmService.save(film);
+//	}
 	
 	public List<Film> getAllMovies() {
 		return filmService.findAll();

@@ -19,9 +19,16 @@
 
 		<dependency>
 			<groupId>com.argespain.movies</groupId>
+			<artifactId>movies-adapter</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.argespain.movies</groupId>
 			<artifactId>movies-service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
