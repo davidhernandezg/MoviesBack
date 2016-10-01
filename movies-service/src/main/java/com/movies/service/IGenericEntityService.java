@@ -12,6 +12,6 @@ public interface IGenericEntityService<T, ID> {
 
     public void delete(ID id);
 
-    public List<T> findByName(String name);
+    public List<T> findByTitle(String name);
 
 }

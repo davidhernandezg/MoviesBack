@@ -38,6 +38,6 @@ public class MovieServiceTestImpl implements IMovieServiceTest {
 	}
 	
 	public List<Film> findByTitle(String title){
-		return filmService.findByName(title);
+		return filmService.findByTitle(title);
 	}
 }

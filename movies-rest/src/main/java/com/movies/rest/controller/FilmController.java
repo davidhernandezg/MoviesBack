@@ -12,36 +12,50 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.movies.adapter.dto.FilmDTO;
-import com.movies.service.IFilmService;
-
-import ma.glasnost.orika.MapperFacade;
+import com.movies.adapter.service.FilmAdapter;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/film")
 public class FilmController {
 
 	@Inject
-	private IFilmService filmService;
+	FilmAdapter adapter;
 	
-	@Inject
-	private MapperFacade mapper;
-	
-	@RequestMapping(value="/getAll", method = RequestMethod.GET)
 	@CrossOrigin
+	@RequestMapping(method = RequestMethod.GET)
 	public List<FilmDTO> getAll(){
-		return mapper.mapAsList(filmService.findAll(), FilmDTO.class);
+		return adapter.findAll();
 	}
 	
-	@RequestMapping(value="/create", method = RequestMethod.POST)
 	@CrossOrigin
-	public void create(@RequestBody FilmDTO filmDTO) {
-		filmService.createFilm(filmDTO);
+	@RequestMapping(value="/{id}")
+	public FilmDTO findOne(@PathVariable Long id){
+		return adapter.findOne(id);
 	}
 	
-	@RequestMapping(value="/byTitle/{title}")
 	@CrossOrigin
+	@RequestMapping(value="/title/{title}")
 	public List<FilmDTO> findByTitle(@PathVariable String title){
-		return mapper.mapAsList(filmService.findByName(title), FilmDTO.class);
+		return adapter.findByTitle(title);
 	}
+	
+	@CrossOrigin
+	@RequestMapping(method = RequestMethod.POST)
+	public void create(@RequestBody FilmDTO filmDTO) {
+		adapter.save(filmDTO);
+	}
+	
+	@CrossOrigin
+	@RequestMapping(method= RequestMethod.PUT)
+	public void update(@RequestBody FilmDTO filmDTO){
+		adapter.save(filmDTO);
+	}
+	
+	@CrossOrigin
+	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
+	public void delete (@PathVariable Long id){
+		adapter.delete(id);
+	}
+	
 }
