@@ -1,8 +1,9 @@
 package com.movies.domain;
 
 import java.io.Serializable;
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -22,23 +23,50 @@ public abstract class Movie implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(name="title")
+	@Column(name = "title")
 	private String title;
 
-	@Column(name="original_title")
+	@Column(name = "original_title")
 	private String originalTitle;
 
-	@Column(name="release_date")
+	@Column(name = "release_date")
 	private Date releaseDate;
 
-	@Column(name="genre")
-	private String genre;
+	//Falta anotación
+	private List<Genre> genre;
 
-	@Column(name="duration")
-	private Time duration;
+	@Column(name = "duration")
+	private LocalTime duration;
 
-	@Column(name="content_rating")
-	private Integer contentRating;
+	@Column(name = "popularity")
+	private Float popularity;
+
+	@Column(name = "budget")
+	private Long budget;
+
+	@Column(name = "imdbId")
+	private Long imdbId;
+
+	@Column(name = "overview")
+	private String overview;
+
+	@Column(name = "tagline")
+	private String tagline;
+
+	@Column(name = "revenue")
+	private Long revenue;
+
+	@Column(name = "poster")
+	private String poster;
+
+	@Column(name = "runtime")
+	private Integer runtime;
+
+	//Falta anotación
+	private List<Cast> cast;
+	
+	@Column(name = "video")
+	private String video;
 
 	public Long getId() {
 		return id;
@@ -72,27 +100,99 @@ public abstract class Movie implements Serializable {
 		this.releaseDate = releaseDate;
 	}
 
-	public String getGenre() {
-		return genre;
-	}
-
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-
-	public Time getDuration() {
+	public LocalTime getDuration() {
 		return duration;
 	}
 
-	public void setDuration(Time duration) {
+	public void setDuration(LocalTime duration) {
 		this.duration = duration;
 	}
 
-	public Integer getContentRating() {
-		return contentRating;
+	public List<Genre> getGenre() {
+		return genre;
 	}
 
-	public void setContentRating(Integer contentRating) {
-		this.contentRating = contentRating;
+	public void setGenre(List<Genre> genre) {
+		this.genre = genre;
+	}
+
+	public Float getPopularity() {
+		return popularity;
+	}
+
+	public void setPopularity(Float popularity) {
+		this.popularity = popularity;
+	}
+
+	public Long getBudget() {
+		return budget;
+	}
+
+	public void setBudget(Long budget) {
+		this.budget = budget;
+	}
+
+	public Long getImdbId() {
+		return imdbId;
+	}
+
+	public void setImdbId(Long imdbId) {
+		this.imdbId = imdbId;
+	}
+
+	public String getOverview() {
+		return overview;
+	}
+
+	public void setOverview(String overview) {
+		this.overview = overview;
+	}
+
+	public String getTagline() {
+		return tagline;
+	}
+
+	public void setTagline(String tagline) {
+		this.tagline = tagline;
+	}
+
+	public Long getRevenue() {
+		return revenue;
+	}
+
+	public void setRevenue(Long revenue) {
+		this.revenue = revenue;
+	}
+
+	public String getPoster() {
+		return poster;
+	}
+
+	public void setPoster(String poster) {
+		this.poster = poster;
+	}
+
+	public Integer getRuntime() {
+		return runtime;
+	}
+
+	public void setRuntime(Integer runtime) {
+		this.runtime = runtime;
+	}
+
+	public List<Cast> getCast() {
+		return cast;
+	}
+
+	public void setCast(List<Cast> cast) {
+		this.cast = cast;
+	}
+
+	public String getVideo() {
+		return video;
+	}
+
+	public void setVideo(String video) {
+		this.video = video;
 	}
 }
