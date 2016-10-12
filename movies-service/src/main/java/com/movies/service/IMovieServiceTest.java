@@ -10,4 +10,5 @@ public interface IMovieServiceTest {
 //	void createMovie(String title);
 	List<Film> getAllMovies();
 	List<Film> findByTitle(String title);
+	void createMovie();
 }

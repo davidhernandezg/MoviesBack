@@ -5,11 +5,15 @@ import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
 
 @MappedSuperclass
 public abstract class Movie implements Serializable {
@@ -32,7 +36,7 @@ public abstract class Movie implements Serializable {
 	@Column(name = "release_date")
 	private Date releaseDate;
 
-	//Falta anotación
+	@OneToMany
 	private List<Genre> genre;
 
 	@Column(name = "duration")
@@ -62,7 +66,7 @@ public abstract class Movie implements Serializable {
 	@Column(name = "runtime")
 	private Integer runtime;
 
-	//Falta anotación
+	@ManyToMany(fetch=FetchType.LAZY,cascade=CascadeType.ALL)
 	private List<Cast> cast;
 	
 	@Column(name = "video")

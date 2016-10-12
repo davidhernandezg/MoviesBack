@@ -25,10 +25,10 @@ public class MovieTestController {
 	@Inject
 	private MapperFacade mapper;
 	
-//	@RequestMapping(value="/create")
-//	public void createMovie(){
-//		movieServiceTest.createMovie();
-//	}
+	@RequestMapping(value="/create")
+	public void createMovie(){
+		movieServiceTest.createMovie();
+	}
 //	
 //	@RequestMapping(value="/create/{title}")
 //	public void createMovie(@PathVariable String title){

@@ -7,9 +7,9 @@ public enum JobsEnumDomain {
 	private String tipoJob;
 	private Integer id;
 
-	JobsEnumDomain(String tipoJob, Integer order) {
+	JobsEnumDomain(String tipoJob, Integer id) {
 		this.tipoJob = tipoJob;
-		this.id = order;
+		this.id = id;
 	}
 
 	public String getTipoJob() {
